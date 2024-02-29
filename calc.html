@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculator</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #c8dbc5;
+    }
+    .calculator {
+        background-color: #857c7c;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(158, 82, 82, 0.1);
+        padding: 20px;
+        width: 300px;
+    }
+    .screen {
+        background-color: #d47575;
+        border: 1px solid #000000;
+        border-radius: 4px;
+        color: #2d5972;
+        font-size: 20px;
+        margin-bottom: 10px;
+        padding: 10px;
+        text-align: right;
+    }
+    .buttons {
+        display: grid;
+        grid-gap: 5px;
+        grid-template-columns: repeat(4, 1fr);
+    }
+    button {
+        background-color: #031503;
+        border: none;
+        border-radius: 100px;
+        color: rgb(223, 14, 14);
+        cursor: pointer;
+        font-size: 18px;
+        padding: 10px 0;
+        transition: background-color 0.3s;
+    }
+    button:hover {
+        background-color: #c3dbc4;
+    }
+    button.clear {
+        background-color: #181717;
+    }
+    button.clear:hover {
+        background-color: #d32f2f;
+    }
+   
+</style>
+</head>
+<body>
+    <h1> Calculator</h1>
+
+<div class="calculator">
+    <div class="screen" id="screen">0</div>
+    <div class="buttons">
+        <button onclick="clearScreen()" class="clear">C</button>
+        <button onclick="appendCharacter('/')">/</button>
+        <button onclick="appendCharacter('*')">*</button>
+        <button onclick="appendCharacter('-')">-</button>
+        <button onclick="appendCharacter('7')">7</button>
+        <button onclick="appendCharacter('8')">8</button>
+        <button onclick="appendCharacter('9')">9</button>
+        <button onclick="appendCharacter('+')">+</button>
+        <button onclick="appendCharacter('4')">4</button>
+        <button onclick="appendCharacter('5')">5</button>
+        <button onclick="appendCharacter('6')">6</button>
+        <button onclick="calculateResult()">=</button>
+        <button onclick="appendCharacter('1')">1</button>
+        <button onclick="appendCharacter('2')">2</button>
+        <button onclick="appendCharacter('3')">3</button>
+        <button onclick="appendCharacter('.')">.</button>
+        <button onclick="appendCharacter('0')">0</button>
+    </div>
+</div>
+
+<script>
+    let expression = '';
+
+    function clearScreen() {
+        expression = '';
+        updateScreen();
+    }
+
+    function appendCharacter(char) {
+        expression += char;
+        updateScreen();
+    }
+
+    function calculateResult() {
+        try {
+            const result = eval(expression);
+            expression = result.toString();
+            updateScreen();
+        } catch (error) {
+            expression = 'Error';
+            updateScreen();
+        }
+    }
+
+    function updateScreen() {
+        document.getElementById('screen').innerText = expression;
+    }
+</script>
+
+</body>
+</html>
