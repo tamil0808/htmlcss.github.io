@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Education Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .education {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .education-item {
+      background-color: #f4f4f4;
+      border-radius: 5px;
+      margin: 10px;
+      padding: 20px;
+      width: 300px;
+      text-align: center;
+      transition: transform 0.3s ease-in-out;
+      animation: fadeIn 1s ease-out;
+    }
+
+    .education-item:hover {
+      transform: scale(1.05);
+    }
+
+    h1, h2 {
+      margin: 5px 0;
+    }
+
+    p {
+      margin: 5px 0;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .education-item:nth-child(even) {
+      animation-delay: 0.5s;
+    }
+    BODY{
+        background-image: url(https://graphicriver.img.customer.envatousercontent.com/files/78300601/edupaper590.jpg?auto=compress%2Cformat&fit=crop&crop=top&w=590&h=590&s=eb6da4392acf7bd4370e906acdcbddf1);
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Education</h1>
+  </header>
+  <section class="education">
+    <div class="education-item">
+      <h2>Bachelor's Degree</h2>
+      <p>COLLEGE NAME:sri eshwar college of engineering</p>
+      <p>COURSE: electronics and communication engineering</p>
+      <P>CGPA:8.2</P>
+      <p>Graduation Year: 2026</p>
+    </div>
+    <div class="education-item">
+      <h2>SCHOOL</h2>
+      <p>SCHOOL Name:GOVERNMENT HIGHER SECONDARY SCHOOL ,OTHAKKALMANDAPAM</p>
+      <p>10 TH PERCENTAGE:86%</p>
+      <p>12 TH PERCENTAGE:80%</p>
+      
+    </div>
+  </section>
+</body>
+</html>
