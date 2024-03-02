@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Temperature Converter</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #c8dbc5;
+    }
+    .TEMP {
+        background-color: #857c7c;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(158, 82, 82, 0.1);
+        padding: 25px;
+        width: 300px;
+        text-align: center; 
+    }
+</style>
+</head>
+<body>
+
+<div class="TEMP">
+    <h2>Temperature </h2> 
+    
+    <div class="buttons">
+        <label>Enter temperature: <input type="text" id="temperature"></label><br><br>
+        <input type="submit" value="Convert to Celsius" style="background-color: rgb(195, 97, 97);" onclick="convertToCelsius()"><br><br>
+        <input type="submit" value="Convert to Fahrenheit" style="background-color: rgb(188, 88, 88);" onclick="convertToFahrenheit()">
+    </div>
+    
+    <div id="result"></div>
+</div>
+
+<script>
+function celsiusToFahrenheit(celsius) 
+{
+  return (Number(celsius) * 9/5) + 32;
+}
+
+function fahrenheitToCelsius(fahrenheit) 
+{
+  return (Number(fahrenheit) - 32) * 5/9;
+}
+
+function convertToCelsius()
+{
+    var temperature= document.getElementById("temperature").value;
+    var result = fahrenheitToCelsius(temperature);
+    document.getElementById('result').innerText = "Temperature in Celsius: " + result.toFixed(2);
+}
+function convertToFahrenheit() 
+{
+    var temperature = document.getElementById('temperature').value;
+
+    var result = celsiusToFahrenheit(temperature);
+    document.getElementById('result').innerText = "Temperature in Fahrenheit: " + result.toFixed(2);
+}
+</script>
+
+</body>
+</html>
